@@ -11,6 +11,11 @@ public class burger extends Actor
         if(getX() <= 0) {
             resetBurger();
         }
+        if(isTouching(hero.class)){
+            sadface sadface = new sadface();
+            getWorld() .addObject(sadface, 300, 200 );
+            getWorld().removeObject(this);
+        }
     }
     public void resetBurger() {
         int num = Greenfoot.getRandomNumber(2);
